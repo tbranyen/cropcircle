@@ -10,5 +10,12 @@
   <main role="main">
     {%partial content%}
   </main>
+
+  {%if env == "production"%}
+    <script src="/dist/client.min.js"></script>
+  {%else%}
+    <script src="/reload/reload.js"></script>
+    <script src="/node_modules/amd.js/amd.js" data-main="/client/js/index"></script>
+  {%endif%}
 </body>
 </html>

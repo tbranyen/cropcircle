@@ -2,10 +2,13 @@ define(function(require, module, exports) {
   var combyne = require('combyne');
   var $ = require('jquery');
 
+  var dynamicRequire = require;
+
   require('diffhtml');
 
   // Preload all the pages used.
   require('../../views/pages/index.html');
+  require('../../views/pages/about.html');
 
   var main = $('main');
   var views = '../../views/';
