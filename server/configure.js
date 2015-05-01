@@ -36,12 +36,12 @@ module.exports = function(server) {
   }
   else if (env === 'test') {
     host = host || '0.0.0.0';
-
-    // Make static directories available.
-    staticDirs.forEach(function(name) {
-      server.use('/' + name, express.static(local('../' + name)));
-    });
   }
+
+  // Make static directories available.
+  staticDirs.forEach(function(name) {
+    server.use('/' + name, express.static(local('../' + name)));
+  });
 
   // Listen server on the given port and host.
   if (port) {

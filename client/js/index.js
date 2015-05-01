@@ -19,7 +19,8 @@ define(function(require, module, exports) {
     var template = dynamicRequire(loc);
 
     document.documentElement.outerDiffHTML = template.render({
-      title: name
+      title: name,
+      env: window.env
     });
   }
 

@@ -19,7 +19,8 @@ var pages = glob.sync('**/*.html', {
 pages.forEach(function(page) {
   app.get('/' + page, function(req, res) {
     res.render('pages/' + page, {
-      title: page
+      title: page,
+      env: process.env.NODE_ENV
     });
   });
 });

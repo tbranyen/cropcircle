@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Page</title>
+
+  <link rel="stylesheet" href="/client/css/index.css">
 </head>
 <body>
   <main role="main">
@@ -17,5 +19,10 @@
     <script src="/reload/reload.js"></script>
     <script src="/node_modules/amd.js/amd.js" data-main="/client/js/index"></script>
   {%endif%}
+
+  <!-- Bootstrap server properties to the client here... -->
+  <script>
+    window.env = '{{ env }}';
+  </script>
 </body>
 </html>

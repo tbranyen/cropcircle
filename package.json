@@ -5,7 +5,7 @@
   "main": "server",
   "scripts": {
     "start": "node .",
-    "cleancss": "cleancss client/styles/index.css -o dist/client.css",
+    "cleancss": "cleancss client/css/index.css -o dist/client.css",
     "copy": "ncp client dist",
     "build": "rm -rf dist && mkdir dist && npm run copy && npm run cleancss && npm run browserify && npm run uglifyjs",
     "uglifyjs": "uglifyjs dist/client.js -o dist/client.min.js",
