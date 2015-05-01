@@ -1,0 +1,41 @@
+{
+  "name": "cropcircles",
+  "version": "1.0.0",
+  "description": "Pattern framework",
+  "main": "server",
+  "scripts": {
+    "start": "node .",
+    "cleancss": "cleancss client/styles/index.css -o dist/client.css",
+    "copy": "ncp client dist",
+    "build": "rm -rf dist && mkdir dist && npm run copy && npm run cleancss && npm run browserify && npm run uglifyjs",
+    "uglifyjs": "uglifyjs dist/client.js -o dist/client.min.js",
+    "browserify": "browserify --ignore-missing -t combynify -t deamdify client/js/index.js -o dist/client.js",
+    "watch": "supervisor -e 'html|js|css' node ."
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "clean-css": "^3.1.9",
+    "combynexpress": "^1.0.0",
+    "combynify": "^1.0.0",
+    "deamdify": "jaredhanson/deamdify",
+    "express": "^4.12.2",
+    "glob": "^5.0.5",
+    "ncp": "^2.0.0",
+    "reload": "^0.1.0",
+    "supervisor": "^0.6.0",
+    "uglify-js": "^2.4.20"
+  },
+  "dependencies": {
+    "amd.js": "tbranyen/amd.js",
+    "combyne": "^0.7.1",
+    "combyne-amd-loader": "tbranyen/combyne-amd-loader",
+    "diffhtml": "tbranyen/diffhtml",
+    "jquery": "^2.1.3"
+  },
+  "extensions": {
+    "html": "combyne-amd-loader"
+  },
+  "combyneLoader": {
+    "root": "/views"
+  }
+}
