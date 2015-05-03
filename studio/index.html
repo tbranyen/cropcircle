@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Design Studio</title>
+
+  <link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.css">
+  <style>
+    html {
+      /* I am shame */
+      overflow-x: hidden;
+    }
+
+    .ui.grid {
+      height: calc(100% - 33px);
+      background-color: rgba(219, 230, 214, 0.3);
+      background-image: linear-gradient(white 2px, transparent 2px),
+      linear-gradient(90deg, white 2px, transparent 2px),
+      linear-gradient(rgba(255,255,255,.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.3) 1px, transparent 1px);
+      background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+      background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+    }
+
+    .ui.grid > .row.with-no-padding {
+      padding: 0;
+      height: 100%;
+    }
+
+    .ui.secondary.menu .item > .input input.with-no-padding {
+      padding-left: 0;
+    }
+
+    .navigation, .navigation .menu {
+      height: 100%;
+    }
+
+    .navigation .menu {
+      background: #F7F7F7 !important;
+    }
+
+    .main-content {
+      height: 100%;
+      text-align: center;
+    }
+
+    iframe {
+      border: none;
+      border-left: 3px solid rgba(0, 0, 0, 0.1);
+      border-right: 3px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.75);
+      width: 50%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Menu -->
+  <div class="ui secondary pointing menu">
+    <a class="active item"> <i class="cube icon"></i> Components </a>
+    <a class="item"> <i class="cubes icon"></i> Pages </a>
+    <a class="item"> <i class="grid layout icon"></i> Layouts </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        Preview
+        <i class="dropdown icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui grid">
+    <div class="row with-no-padding">
+      <!-- Navigation -->
+      <div class="two wide column navigation">
+        <div class="ui secondary vertical pointing menu">
+          <div class="item">
+            <div class="ui input"><input type="text" placeholder="Find component..." class="with-no-padding"></div>
+          </div>
+          <div class="active item">
+            <i class="cube icon"></i> Header
+            
+            <div class="menu">
+              <a class="active item">Markup</a>
+              <a class="item">Styles</a>
+              <a class="item">Script</a>
+            </div>
+          </div>
+          <div class="item">
+            <i class="cube icon"></i> Navigation
+            
+            <div class="menu">
+              <a class="active item">Markup</a>
+              <a class="item">Styles</a>
+              <a class="item">Script</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main content -->
+      <div class="fourteen wide column main-content">
+        <iframe></iframe>      
+      </div>
+    </div>
+  </div>
+</body>
+</html>
